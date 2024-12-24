@@ -1,9 +1,19 @@
-breakfast ::= protein 'with' breakfast 'on the side'
-expression ::= equality
-equality ::= comparison ( ( '!=' | '==' ) comparison )*
-comparison ::= term ( ( '>' | '>=' | '<' | '<=' ) term )*
-term ::= factor ( ( '-' | '+' ) factor )*
-factor ::= unary ( ( '/' | '*' ) unary )*
-unary ::= ( '!' | '-' ) unary | primary
-primary ::= NUMBER | STRING | 'true' | 'false' | 'nil' | '(' expression ')' | IDENTIFIER
+breakfast  → protein "with" breakfast "on the side" ;
+breakfast  → protein ;
+breakfast  → bread ;
+
+protein    → crispiness "crispy" "bacon" ;
+protein    → "sausage" ;
+protein    → cooked "eggs" ;
+
+crispiness → "really" ;
+crispiness → "really" crispiness ;
+
+cooked     → "scrambled" ;
+cooked     → "poached" ;
+cooked     → "fried" ;
+
+bread      → "toast" ;
+bread      → "biscuits" ;
+bread      → "English muffin" ;
 
